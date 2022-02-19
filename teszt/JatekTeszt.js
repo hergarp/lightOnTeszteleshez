@@ -47,7 +47,35 @@ QUnit.module("szomszedokValtoztatasa()", (h) => {
     });
     test("Bal felső lámpa  van- e fel kapcsolva", (assert) => {
         this.lojatek.szomszedokValtoztatasa(0);
-        assert.equal(this.lojatek.ellenorzes(0), 0);
+        assert.equal(this.lojatek.ellenorzes(2), 2);
+    });
+    test("Jobb felső lámpa  van- e fel kapcsolva", (assert) => {
+        this.lojatek.szomszedokValtoztatasa(2);
+        assert.equal(this.lojatek.ellenorzes(2), 2);
+    });
+    test("Bal alsó lámpa  van- e fel kapcsolva", (assert) => {
+        this.lojatek.szomszedokValtoztatasa(6);
+        assert.equal(this.lojatek.ellenorzes(2), 2);
+    });
+    test("Jobb alsó lámpa  van- e fel kapcsolva", (assert) => {
+        this.lojatek.szomszedokValtoztatasa(8);
+        assert.equal(this.lojatek.ellenorzes(2), 2);
+    });
+    test("Jobb szélső középső lámpa  van- e fel kapcsolva", (assert) => {
+        this.lojatek.szomszedokValtoztatasa(5);
+        assert.equal(this.lojatek.ellenorzes(3), 3);
+    });
+    test("Bal szélső középső lámpa  van- e fel kapcsolva", (assert) => {
+        this.lojatek.szomszedokValtoztatasa(3);
+        assert.equal(this.lojatek.ellenorzes(3), 3);
+    });
+    test("Első sor  középső  lámpa  van- e fel kapcsolva", (assert) => {
+        this.lojatek.szomszedokValtoztatasa(1);
+        assert.equal(this.lojatek.ellenorzes(3), 3);
+    });
+    test("Utolsó sor  középső  lámpa  van- e fel kapcsolva", (assert) => {
+        this.lojatek.szomszedokValtoztatasa(7);
+        assert.equal(this.lojatek.ellenorzes(3), 3);
     });
 
 });
